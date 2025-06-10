@@ -1,0 +1,28 @@
+"use client";
+import { blogData } from "@/data/blogdata";
+import HighlightCard from "@/components/HighlightCard";
+import Heading from "@/components/Heading";
+
+export default function Highlights() {
+  return (
+    <section className="w-full min-h-screen py-10">
+      <div className="max-w-screen-xl mx-auto w-full h-full">
+        <Heading
+          title="Highlights"
+          subtitle="What makes us stand out — at a glance."
+        />
+
+        <div className="flex items-center justify-between flex-wrap gap-8 max-sm:flex-col">
+          {blogData.map((item, index) => (
+            <HighlightCard
+              key={index}
+              title={item.title}
+              image={item.image}
+              desc={item.desc}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
