@@ -1,12 +1,11 @@
 "use client";
-import { useState } from "react";
 import { featureData } from "@/data/featuredata";
 import FeatureCard from "@/components/FeatureCard";
 import Heading from "@/components/Heading";
 
 export default function Feature() {
   return (
-    <section className="w-full min-h-screen py-10 text-zinc-800">
+    <section className="w-full min-h-screen py-20 text-zinc-800">
       <div className="max-w-screen-xl mx-auto w-full h-full">
         <Heading
           title="Features that drive results"
@@ -14,7 +13,7 @@ export default function Feature() {
         />
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featureData.map((feature, index) => (
             <FeatureCard
               key={`feature-${index}`} // Added more specific key

@@ -51,7 +51,7 @@ export default function Brand() {
           </div>
           <div className="relative w-full h-[50rem] rounded-md overflow-hidden mt-4  p-3">
             <Image
-              src={"/dashboard.png"}
+              src={"/dashboard.webp"}
               alt={"image1"}
               fill
               className="object-cover object-center transition-transform duration-500 hover:rotate-2"

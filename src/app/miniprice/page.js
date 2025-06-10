@@ -20,7 +20,7 @@ export default function MiniPrice() {
           <div className="flex-1">
             <div className="relative w-full h-80 rounded-md overflow-hidden ">
               <Image
-                src="/miniprice.png"
+                src="/miniprice.webp"
                 alt="Pricing Illustration"
                 fill
                 className="object-center object-cover"

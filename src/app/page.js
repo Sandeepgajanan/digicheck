@@ -9,7 +9,7 @@ import MiniPrice from "./miniprice/page";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen max-sm:px-6">
       <Landing />
       <Brand />
       <Feature />

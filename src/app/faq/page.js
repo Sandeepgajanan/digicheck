@@ -24,10 +24,10 @@ export default function Faq() {
           subtitle="Find quick answers to common questions about our services"
         />
         <div className="flex w-full h-full gap-32 max-sm:flex-col">
-          <div className="w-1/2 h-96">
+          <div className="w-1/2 h-96 max-sm:w-full">
             <div className="relative w-full rounded-md h-full overflow-hidden">
               <Image
-                src="/faq.png"
+                src="/faq.webp"
                 alt="FAQ Illustration"
                 fill
                 className="object-cover"
@@ -36,7 +36,7 @@ export default function Faq() {
           </div>
 
           {/* RIGHT - FAQ */}
-          <div className="w-1/2 rounded-md shadow-md bg-gradient-to-b from-white to-gray-100 p-5">
+          <div className="w-1/2 rounded-md shadow-md bg-gradient-to-b from-white to-gray-100 p-5 max-sm:w-full">
             <div className="space-y-6">
               {faqData.map((faq, index) => (
                 <div key={index} className=" pb-4">
