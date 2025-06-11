@@ -30,6 +30,7 @@ export default function Faq() {
                 src="/faq.webp"
                 alt="FAQ Illustration"
                 fill
+                sizes="50vw"
                 className="object-cover"
               />
             </div>

@@ -2,12 +2,11 @@
 
 import Button from "@/components/Button";
 import Image from "next/image";
-import Link from "next/link";
-// bg-gradient-to-b from-pink-100 via-orange-100  to-white
+
 export default function Landing() {
   return (
     <main
-      className="w-full min-h-screen text-zinc-900 pt-16 px-4 max-sm:pt-4"
+      className="w-full min-h-screen text-zinc-900 mt-16 px-4 max-sm:pt-4"
       style={{
         backgroundImage: 'url("/bg.webp")',
         backgroundSize: "cover",
@@ -33,24 +32,26 @@ export default function Landing() {
           <Button label={"Request Demo"} link={"/contact"} />
         </div>
 
-        <div className="w-1/2 h-full flex gap-4  px-4 relative  max-sm:w-full max-sm:hidden">
+        <div className="w-1/2 h-full flex    relative  max-sm:w-full max-sm:hidden">
           <div className="h-full flex w-1/2  ">
-            <div className="relative h-96 w-96 rounded-xl overflow-hidden mt-10 bg-zinc-50">
+            <div className="relative h-96 w-96 rounded-xl overflow-hidden mt-16 bg-zinc-50">
               <Image
                 src={"/home1.webp"}
                 alt={"image1"}
                 fill
-                className="object-cover object-center opacity-50"
+                sizes="384px"
+                className="object-cover object-center opacity-30"
               />
             </div>
           </div>
           <div className="h-full flex flex-col gap-8 w-1/2 pt-20  items-center">
-            <div className="relative h-60 w-56 rounded-xl overflow-hidden -mt-8 bg-zinc-50">
+            <div className="relative h-60 w-56 rounded-xl overflow-hidden -mt-10 bg-zinc-50">
               <Image
                 src={"/img2.webp"}
                 alt={"image1"}
                 fill
-                className="object-cover opacity-30"
+                sizes="240px"
+                className="object-cover opacity-20"
               />
             </div>
             <div className="relative h-60 w-56 rounded-2xl overflow-hidden bg-zinc-50">
@@ -58,15 +59,17 @@ export default function Landing() {
                 src={"/home2.webp"}
                 alt={"image1"}
                 fill
+                sizes="240px"
                 className="object-cover opacity-50"
               />
             </div>
           </div>
-          <div className="absolute mt-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-72 w-80 rounded-2xl overflow-hidden bg-zinc-50">
+          <div className="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-72 w-80 rounded-2xl overflow-hidden bg-zinc-50">
             <Image
               src={"/home2.webp"}
               alt={"image1"}
               fill
+               sizes="288px"
               className="object-cover object-center opacity-90"
             />
           </div>

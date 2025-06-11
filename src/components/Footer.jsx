@@ -16,7 +16,7 @@ const Footer = () => {
                 src="/footer-logo.webp"
                 alt="Almasons Logo"
                 fill
-                sizes="(max-width: 768px) 100px, 160px"
+                sizes="160px"
                 priority
                 className="object-cover object-center"
               />

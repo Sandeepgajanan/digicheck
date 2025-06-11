@@ -14,6 +14,7 @@ const FeatureCard = ({ image, title, desc }) => {
               src={image}
               alt={title}
               fill
+              sizes={"56px"}
               className="object-cover"
             /> */}
           </div>
@@ -33,7 +34,7 @@ const FeatureCard = ({ image, title, desc }) => {
 
       {/* CTA Button - Fixed at bottom */}
       <div className="p-6 flex justify-center">
-        <Button label="Read More" link="/feature" />
+        <Button label="Read More" link="/mainfeature" />
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ const HighlightCard = ({ image, title, desc }) => {
             src={image}
             alt={title}
             fill
+            sizes="256px"
             className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
         </div>

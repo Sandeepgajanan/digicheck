@@ -1,14 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-const Button = ({ label, link }) => {
+const Button = ({ label, link, color = "zinc-800" }) => {
   return (
     <Link href={link} className="inline-block">
       <button
         type="button"
-        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-800 font-[MyFont] text-zinc-100 border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group
-        max-md:px-3 max-md:py-1.5 max-md:text-xs max-md:rounded-lg
-        max-sm:gap-1 max-sm:px-2 max-sm:py-1"
+        className={`flex items-center justify-center gap-2 py-2 px-4 min-w-36  rounded-md bg-${color}  ${
+          color === "white" ? "text-zinc-800" : "text-zinc-100"
+        } border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group
+       `}
       >
         <span>{label}</span>
         <span
@@ -16,8 +17,9 @@ const Button = ({ label, link }) => {
         max-md:ml-0.5"
         >
           <i
-            className="ri-arrow-right-line text-white text-lg
-          max-md:text-base max-sm:text-sm"
+            className={`ri-arrow-right-line ${
+              color === "white" ? "text-zinc-800" : "text-white"
+            } ri-sm  max-md:text-base max-sm:text-sm`}
           />
         </span>
       </button>

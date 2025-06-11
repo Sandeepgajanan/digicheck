@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/fav.png" type="image/png" />
       </head>
-      <body className="antialiased relative">
+      <body className="antialiased relative" cz-shortcut-listen="true">
         <SmoothScroll />
         <Cursor />
         <Navbar />

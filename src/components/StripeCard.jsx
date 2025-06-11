@@ -8,6 +8,7 @@ const StripeCard = ({ image }) => {
         src={image}
         alt="Partner logo"
         fill
+        sizes="144px"
         className="object-contain p-2"
       />
     </div>
