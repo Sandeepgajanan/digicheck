@@ -5,16 +5,16 @@ import Image from "next/image";
 
 const LiveProduct = () => {
   return (
-    <div className="py-10 text-center flex  flex-col items-center  space-y-4">
+    <div className="py-10 px-6 text-center flex  flex-col items-center  space-y-4">
       <Heading
         title="Live Product review"
         subtitle="Watch how our product helps automotive companies streamline their operations and enhance safety measures through real-time monitoring and analytics."
       />
-      <div className="flex gap-6 items-center justify-center">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <Button label={"Get Started for free"} link={"/contact"} />
         <Button label={"Learn More"} link={"/contact"} />
       </div>
-      <div className="relative w-full h-[50rem] rounded-md overflow-hidden mt-4  p-3">
+     <div className="relative w-full h-52 sm:h-[45rem] md:h-[50rem] rounded-md overflow-hidden mt-4 px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10">
         <Image
           src={"/dashboard.webp"}
           alt={"image1"}

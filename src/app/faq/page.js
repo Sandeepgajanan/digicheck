@@ -23,8 +23,8 @@ export default function Faq() {
           title="Customer's frequently asked questions"
           subtitle="Find quick answers to common questions about our services"
         />
-        <div className="flex w-full h-full gap-18 max-sm:flex-col">
-          <div className="w-1/2 h-96 max-sm:w-full">
+        <div className="flex flex-col md:flex-row items-center w-full h-full gap-18 ">
+          <div className="w-56 h-44 md:w-1/2 md:h-96 ">
             <div className="relative w-full rounded-md h-full overflow-hidden">
               <Image
                 src="/faq.webp"

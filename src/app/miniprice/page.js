@@ -8,7 +8,7 @@ export default function MiniPrice() {
     <section className="w-full min-h-fit py-10 text-zinc-800">
       <div className="max-w-screen-xl mx-auto w-full px-4">
         <div className="flex items-center justify-between max-sm:flex-col">
-          <div className="w-2/3 space-y-10  p-2 text-center">
+          <div className="w-full text-center md:w-2/3 md:text-left space-y-10  p-2 ">
             <h1 className="text-3xl ">
               Plan that scale with your needs <br />
               Whether you're just getting started or growing fast <br />

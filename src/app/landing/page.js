@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Landing() {
   return (
     <main
-      className="w-full min-h-screen text-zinc-900 mt-16 px-4 max-sm:pt-4"
+      className="w-full h-fit md:min-h-screen text-zinc-900 px-2 md:px-8 mt-16"
       style={{
         backgroundImage: 'url("/bg.webp")',
         backgroundSize: "cover",
@@ -14,27 +14,29 @@ export default function Landing() {
         backgroundPosition: "center",
       }}
     >
-      <section className="w-full h-full max-w-screen-xl mx-auto flex  max-sm:flex-col max-sm:screen">
-        <div className="flex flex-col h-full w-1/2  pt-20 space-y-6 px-5 max-sm:w-full max-sm:justify-center max-sm:items-center  ">
-          <h2 className="bg-white shadow-2xl p-1 rounded-xl w-60 text-center text-nowrap max-sm:w-full">
+      <section className="w-full h-full max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between ">
+        <div className="flex flex-col w-full h-full space-y-6 pt-5 md:w-1/2  md:pt-20   ">
+          <h2 className=" bg-white w-fit mx-auto md:mx-0 shadow-2xl p-1 rounded-xl md:w-60 text-center text-nowrap ">
             <span className="text-xs uppercase text-zinc-700 ">
               100 percent secure & reliable
             </span>
           </h2>
-          <h1 className="uppercase font-extrabold  text-5xl text-nowrap leading-14 font-[Myfont] max-sm:text-2xl">
+          <h1 className=" text-2xl leading-none text-center md:text-left uppercase font-extrabold  md:text-5xl text-nowrap md:leading-14 font-[Myfont] max-sm:text-2xl">
             digicheck for <br />
             automotive-real-time <br />
             safety & monitoring
           </h1>
-          <p className="capitalize text-zinc-600">
+          <p className="capitalize text-center md:text-left text-zinc-600">
             Track detect and act smarter
           </p>
-          <Button label={"Request Demo"} link={"/contact"} />
+          <div className="w-full flex justify-center md:mx-0  md:justify-start ">
+            <Button label={"Request Demo"} link={"/contact"} />
+          </div>
         </div>
 
-        <div className="w-1/2 h-full flex    relative  max-sm:w-full max-sm:hidden">
-          <div className="h-full flex w-1/2  ">
-            <div className="relative h-96 w-96 rounded-xl overflow-hidden mt-16 bg-zinc-50">
+        <div className=" flex-1 items-center flex justify-center ">
+          {/* <div className="h-full flex   md:w-1/2 ">
+            <div className="relative w-44 h-44 rounded-xl overflow-hidden  bg-zinc-50 md:mt-16 md:h-96 md:w-96">
               <Image
                 src={"/home1.webp"}
                 alt={"image1"}
@@ -69,8 +71,17 @@ export default function Landing() {
               src={"/home2.webp"}
               alt={"image1"}
               fill
-               sizes="288px"
+              sizes="288px"
               className="object-cover object-center opacity-90"
+            />
+          </div> */}
+          <div className="relative mt-10 w-60 h-52 rounded-xl overflow-hidden  bg-zinc-50 md:mt-16 md:h-96 md:w-96">
+            <Image
+              src={"/try2.png"}
+              alt={"image1"}
+              fill
+              sizes="384px"
+              className="object-cover object-center "
             />
           </div>
         </div>
