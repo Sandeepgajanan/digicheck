@@ -5,8 +5,8 @@ import Heading from "@/components/Heading";
 
 export default function Feature() {
   return (
-    <section className="w-full min-h-screen py-20 text-zinc-800">
-      <div className="max-w-screen-xl mx-auto w-full h-full">
+    <section className="w-full min-h-screen py-10 text-zinc-800">
+      <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Features that drive results"
           subtitle="Discover how our innovative features transform your workflow and boost productivity. Each feature is designed to help you achieve more with less effort."

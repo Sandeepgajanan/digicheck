@@ -7,7 +7,7 @@ import { whyUsData } from "@/data/whyusdata";
 export default function WhyChooseUs() {
   return (
     <section className="w-full min-h-screen py-10">
-      <div className="max-w-screen-xl mx-auto w-full h-full">
+      <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Why Choose Us"
           subtitle="Discover what sets us apart and why we're the right choice for your needs."

@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between border-b border-zinc-100 pb-10 gap-10">
           {/* Logo + About + Social */}
           <div className="w-full md:w-1/3 flex flex-col gap-4">
-            <div className="relative bg-white w-40 h-12 border border-zinc-800 shadow-md">
+            <div className="relative  w-40 h-12">
               <Image
-                src="/almasons-logo.webp"
+                src="/footer-logo.webp"
                 alt="Almasons Logo"
                 fill
                 sizes="(max-width: 768px) 100px, 160px"
@@ -34,9 +34,9 @@ const Footer = () => {
                   aria-label={name}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-zinc-700 transition-all duration-300 ease-in-out shadow-md hover:shadow-zinc-400/20 hover:scale-110 backdrop-blur-sm"
                 >
-                  <i className={`${iconClass} text-zinc-700 text-xl`}></i>
+                  <i className={`${iconClass} text-white text-lg`}></i>
                 </a>
               ))}
             </div>

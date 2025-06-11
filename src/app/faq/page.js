@@ -18,12 +18,12 @@ export default function Faq() {
   return (
     <section className="w-full min-h-screen py-20  text-zinc-800">
       {/* LEFT - Image */}
-      <div className="max-w-screen-xl mx-auto w-full h-full  ">
+      <div className="max-w-screen-xl mx-auto w-full h-full px-4  ">
         <Heading
           title="Customer's frequently asked questions"
           subtitle="Find quick answers to common questions about our services"
         />
-        <div className="flex w-full h-full gap-32 max-sm:flex-col">
+        <div className="flex w-full h-full gap-18 max-sm:flex-col">
           <div className="w-1/2 h-96 max-sm:w-full">
             <div className="relative w-full rounded-md h-full overflow-hidden">
               <Image
@@ -57,7 +57,7 @@ export default function Faq() {
             </div>
           </div>
         </div>
-      <div className=" p-10 bg-zinc-100 rounded-md mt-20">
+      <div className=" p-10 bg-zinc-100 rounded-xl mt-20">
         <div className="bg-white rounded-xl py-20 text-center">
           <h2 className="text-2xl font-semibold mb-4">Stop Thinking, Start Building</h2>
           <p className="text-zinc-600 mb-6">Transform your ideas into reality with our powerful solutions</p>

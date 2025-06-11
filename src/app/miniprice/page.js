@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 export default function MiniPrice() {
   return (
     <section className="w-full min-h-fit py-10 text-zinc-800">
-      <div className="max-w-screen-xl mx-auto w-full">
+      <div className="max-w-screen-xl mx-auto w-full px-4">
         <div className="flex items-center justify-between max-sm:flex-col">
           <div className="w-2/3 space-y-10">
             <h1 className="text-4xl ">

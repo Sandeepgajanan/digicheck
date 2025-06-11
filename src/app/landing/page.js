@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Landing() {
   return (
     <main
-      className="w-full min-h-screen text-zinc-900 pt-16 max-sm:pt-4"
+      className="w-full min-h-screen text-zinc-900 pt-16 px-4 max-sm:pt-4"
       style={{
         backgroundImage: 'url("/bg.webp")',
         backgroundSize: "cover",

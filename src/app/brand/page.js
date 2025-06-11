@@ -11,14 +11,14 @@ export default function Brand() {
 
   return (
     <section className="w-full  text-center min-h-screen py-10">
-      <div className="max-w-screen-xl mx-auto w-full h-full ">
+      <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Trusted by these companies"
           subtitle="Used by forward-thinking companies worldwide"
         />
 
         <div className="overflow-hidden whitespace-nowrap w-full mb-16">
-          <div className="flex gap-16 animate-marquee">
+          <div className="flex gap-12 animate-marquee">
             {stripeData.concat(stripeData).map((brand, index) => (
               <div key={`marquee-${index}`} className="flex-shrink-0 w-40">
                 <StripeCard image={brand.image} />
@@ -28,7 +28,7 @@ export default function Brand() {
         </div>
 
         <div className="overflow-hidden whitespace-nowrap w-full mb-16">
-          <div className="flex gap-16 animate-marqueeReverse min-w-[200%]">
+          <div className="flex gap-12 animate-marqueeReverse min-w-[200%]">
             {reversedBrands.concat(reversedBrands).map((brand, index) => (
               <div key={`marquee-rev-${index}`} className="flex-shrink-0 w-40">
                 <StripeCard image={brand.image} />
