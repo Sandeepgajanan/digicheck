@@ -1,39 +1,29 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 
 export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-200 to-indigo-200 flex flex-col items-center justify-center px-6 text-center">
-      <motion.h1
-        className="text-9xl font-extrabold text-purple-700 mb-6 select-none"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 100, damping: 10 }}
-      >
-        404
-      </motion.h1>
-      <motion.p
-        className="text-xl md:text-2xl font-semibold text-purple-800 mb-8 max-w-xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        Ooops! The page you're looking for doesn't exist or has been moved.
-      </motion.p>
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 bg-white text-center text-zinc-800">
+      
+      <p className="text-lg md:text-xl font-medium max-w-md mb-3 text-zinc-600">
+        Looks like you've wandered off the DigiCheck.
+      </p>
 
-      <motion.button
-        className="bg-purple-600 text-white rounded-full px-8 py-3 font-semibold shadow-lg hover:bg-purple-700 transition"
+      <p className="text-sm text-zinc-500 mb-8">
+        The page you're looking for doesn’t exist or may have been renamed.
+        Let’s get you back on track.
+      </p>
+
+      <button
         onClick={() => router.push("/")}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        aria-label="Go back to Home"
+        className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 py-2 text-sm font-semibold text-zinc-800 shadow-sm hover:shadow-md transition"
+        aria-label="Go back to home"
       >
-        Go Back Home
-      </motion.button>
+        ← Back to Dashboard
+      </button>
     </div>
   );
 }

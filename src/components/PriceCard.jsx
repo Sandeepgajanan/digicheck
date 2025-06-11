@@ -18,9 +18,13 @@ const PriceCard = ({
 
   return (
     <div
-      className={`relative w-80 min-h-96 rounded-2xl shadow-lg p-8 transition-transform duration-300 hover:shadow-2xl space-y-4 ${
-        isPopular ? "scale-110 bg-orange-400 text-white" : "bg-white text-gray-500"
-      }`}
+      className={`relative w-80 min-h-96 rounded-2xl shadow-lg p-8 space-y-4 
+    transform transition-all duration-700 ease-in-out hover:scale-105 
+    ${
+      isPopular
+        ? "bg-gray-700 text-white hover:shadow-[4px_4px_12px_rgba(251,146,60,0.5)]"
+        : "bg-white text-gray-500"
+    }`}
     >
       {isPopular && (
         <div className="absolute top-4 right-4 bg-zinc-600/30 animate-bounce text-white text-xs px-2 py-1 rounded-full font-semibold shadow">
@@ -41,7 +45,8 @@ const PriceCard = ({
       <p className="text-sm">{description}</p>
 
       <div className="text-5xl font-bold">
-        ${displayPrice} <span className="text-base font-medium">/{displayPeriod}</span>
+        ${displayPrice}{" "}
+        <span className="text-base font-medium">/{displayPeriod}</span>
       </div>
 
       <p className="text-sm font-semibold">What’s included</p>
@@ -50,7 +55,7 @@ const PriceCard = ({
           <li key={idx} className="flex items-center gap-2">
             <div
               className={`w-6 h-6 ${
-                index === 1 ? "bg-white" : "bg-orange-400"
+                index === 1 ? "bg-white" : "bg-zinc-400"
               } rounded-full flex items-center justify-center`}
             >
               <i
@@ -65,7 +70,11 @@ const PriceCard = ({
       </ul>
 
       <div className="pl-8 pt-4">
-        <Button label="Get started" link="#" color={index === 1 ? "white" : undefined} />
+        <Button
+          label="Get started"
+          link="#"
+          color={index === 1 ? "white" : undefined}
+        />
       </div>
     </div>
   );

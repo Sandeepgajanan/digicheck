@@ -14,7 +14,7 @@ const FeatureCard = ({ image, title, desc }) => {
               src={image}
               alt={title}
               fill
-              sizes={"56px"}
+              sizes={""}
               className="object-cover"
             /> */}
           </div>
