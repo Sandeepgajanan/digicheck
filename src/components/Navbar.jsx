@@ -33,7 +33,7 @@ export default function Navbar() {
         className={`max-w-screen-xl mx-auto w-full h-20 px-4 flex items-center justify-between  transition-all duration-300 ${
           scrolled
             ? "bg-white/30 backdrop-blur-lg shadow-lg "
-            : "bg-white "
+            : "bg-transparent backdrop-blur-md shadow "
         }`}
       >
         {/* Left: Logo */}

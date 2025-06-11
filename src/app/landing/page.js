@@ -6,10 +6,18 @@ import Link from "next/link";
 // bg-gradient-to-b from-pink-100 via-orange-100  to-white
 export default function Landing() {
   return (
-    <main className="w-full min-h-screen  text-zinc-900 pt-16 max-sm:pt-4">
+    <main
+      className="w-full min-h-screen text-zinc-900 pt-16 max-sm:pt-4"
+      style={{
+        backgroundImage: 'url("/bg.webp")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
       <section className="w-full h-full max-w-screen-xl mx-auto flex  max-sm:flex-col max-sm:screen">
-        <div className="flex flex-col h-full w-1/2  pt-20 space-y-8 px-5 max-sm:w-full max-sm:justify-center max-sm:items-center  ">
-          <h2 className="bg-zinc-100 shadow-2xl p-2 rounded-xl w-60 text-center text-nowrap max-sm:w-full">
+        <div className="flex flex-col h-full w-1/2  pt-20 space-y-6 px-5 max-sm:w-full max-sm:justify-center max-sm:items-center  ">
+          <h2 className="bg-white shadow-2xl p-1 rounded-xl w-60 text-center text-nowrap max-sm:w-full">
             <span className="text-xs uppercase text-zinc-700 ">
               100 percent secure & reliable
             </span>
@@ -19,7 +27,7 @@ export default function Landing() {
             automotive-real-time <br />
             safety & monitoring
           </h1>
-          <p className="capitalize text-zinc-400 ">
+          <p className="capitalize text-zinc-600">
             Track detect and act smarter
           </p>
           <Button label={"Request Demo"} link={"/contact"} />

@@ -6,7 +6,6 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import Heading from "@/components/Heading";
 
-
 export default function Brand() {
   const reversedBrands = [...stripeData].reverse();
 
@@ -18,26 +17,24 @@ export default function Brand() {
           subtitle="Used by forward-thinking companies worldwide"
         />
 
-        <div className="flex justify-center gap-16 mb-16 max-sm:overflow-x-auto">
-          {stripeData.map((brand, index) => (
-            <div
-              key={`top-${index}`}
-              className="flex-shrink-0 flex items-center justify-center w-40  transition-all duration-300 opacity-70 hover:opacity-100 "
-            >
-              <StripeCard image={brand.image} />
-            </div>
-          ))}
+        <div className="overflow-hidden whitespace-nowrap w-full mb-16">
+          <div className="flex gap-16 animate-marquee">
+            {stripeData.concat(stripeData).map((brand, index) => (
+              <div key={`marquee-${index}`} className="flex-shrink-0 w-40">
+                <StripeCard image={brand.image} />
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="flex justify-center gap-16 mb-16 max-sm:overflow-x-auto">
-          {reversedBrands.map((brand, index) => (
-            <div
-            key={`top-${index}`}
-            className="flex-shrink-0 flex items-center justify-center w-40  transition-all duration-300 opacity-70 hover:opacity-100 "
-          >
-            <StripeCard image={brand.image} />
+        <div className="overflow-hidden whitespace-nowrap w-full mb-16">
+          <div className="flex gap-16 animate-marqueeReverse min-w-[200%]">
+            {reversedBrands.concat(reversedBrands).map((brand, index) => (
+              <div key={`marquee-rev-${index}`} className="flex-shrink-0 w-40">
+                <StripeCard image={brand.image} />
+              </div>
+            ))}
           </div>
-          ))}
         </div>
 
         <div className="py-10 text-center flex  flex-col items-center  space-y-4">
