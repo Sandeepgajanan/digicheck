@@ -16,15 +16,15 @@ export default function Faq() {
   };
 
   return (
-    <section className="w-full min-h-screen py-20  text-zinc-800">
+    <section className="w-full min-h-screen py-5 md:py-20  text-zinc-800">
       {/* LEFT - Image */}
       <div className="max-w-screen-xl mx-auto w-full h-full px-4  ">
         <Heading
           title="Customer's frequently asked questions"
           subtitle="Find quick answers to common questions about our services"
         />
-        <div className="flex flex-col md:flex-row items-center w-full h-full gap-18 ">
-          <div className="w-56 h-44 md:w-1/2 md:h-96 ">
+        <div className="flex flex-col md:flex-row items-center  md:items-start w-full h-full gap-18 ">
+          <div className="w-56 h-44 md:w-1/2 md:h-96  ">
             <div className="relative w-full rounded-md h-full overflow-hidden">
               <Image
                 src="/faq.webp"
@@ -45,12 +45,23 @@ export default function Faq() {
                     onClick={() => toggle(index)}
                     className="flex justify-between items-center w-full text-left p-3 bg-white shadow-md rounded-lg "
                   >
-                    <span className=" text-lg text-zinc-800">{faq.question}</span>
-                    <i className={`ri-${openItems[index] ? 'subtract' : 'add'}-line text-xl text-zinc-600`}></i>
+                    <span className=" text-xs md:text-lg text-zinc-800">
+                      {faq.question}
+                    </span>
+                    <div className="relative w-5 h-5">
+                      <Image
+                        src={openItems[index] ? "/remove.svg" : "/add.svg"}
+                        alt={openItems[index] ? "Collapse" : "Expand"}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </button>
                   {openItems[index] && (
                     <div className="px-4 py-2">
-                      <p className="text-zinc-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
+                        {faq.answer}
+                      </p>
                     </div>
                   )}
                 </div>
@@ -58,13 +69,17 @@ export default function Faq() {
             </div>
           </div>
         </div>
-      <div className=" p-10 bg-zinc-100 rounded-xl mt-20">
-        <div className="bg-white rounded-xl py-20 text-center">
-          <h2 className="text-2xl font-semibold mb-4">Stop Thinking, Start Building</h2>
-          <p className="text-zinc-600 mb-6">Transform your ideas into reality with our powerful solutions</p>
-          <Button label="Get Started" link="/contact" />
+        <div className=" p-2 md:p-10 bg-zinc-100 rounded-xl mt-20">
+          <div className="bg-white rounded-xl py-20 text-center">
+            <h2 className="text-2xl font-semibold mb-4">
+              Stop Thinking, Start Building
+            </h2>
+            <p className="text-zinc-600 mb-6">
+              Transform your ideas into reality with our powerful solutions
+            </p>
+            <Button label="Get Started" link="/contact" />
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

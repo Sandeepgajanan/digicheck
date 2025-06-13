@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Button = ({ label, link, color = "zinc-800" }) => {
   return (
@@ -8,7 +9,7 @@ const Button = ({ label, link, color = "zinc-800" }) => {
         type="button"
         className={`flex items-center justify-center gap-2 py-2 px-4 min-w-36  rounded-md bg-${color}  ${
           color === "white" ? "text-zinc-800" : "text-zinc-100"
-        } border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group
+        } border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group h-
        `}
       >
         <span>{label}</span>
@@ -16,11 +17,16 @@ const Button = ({ label, link, color = "zinc-800" }) => {
           className="ml-1 flex items-center transition-transform duration-200 group-hover:translate-x-2 group-hover:rotate-12
         max-md:ml-0.5"
         >
-          <i
-            className={`ri-arrow-right-line ${
-              color === "white" ? "text-zinc-800" : "text-white"
-            } ri-sm  max-md:text-base max-sm:text-sm`}
-          />
+          <div className="relative w-4 h-6">
+            <Image
+              src={color === "white" ? "/arrow-black.svg" : "/arrow-white.svg"}
+              alt="arrow"
+              sizes="16px"
+              fill
+              priority
+              className="obejct-cover"
+            />
+          </div>
         </span>
       </button>
     </Link>

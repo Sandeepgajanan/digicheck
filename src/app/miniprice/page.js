@@ -17,8 +17,8 @@ export default function MiniPrice() {
             <Button label="Explore Pricing" link="/price" />
           </div>
 
-          <div className="flex-1">
-            <div className="relative w-full h-80 rounded-md overflow-hidden ">
+          <div className="flex-1 bg-amber-600  max-sm:hidden">
+            <div className="relative w-full h-80 rounded-md overflow-hidden max-sm ">
               <Image
                 src="/miniprice.webp"
                 alt="Pricing Illustration"
