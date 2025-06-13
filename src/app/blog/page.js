@@ -7,7 +7,7 @@ import Faq from "../faq/page";
 
 export default function Blog() {
   return (
-    <section className="w-full min-h-screen py-10">
+    <section className="w-full min-h-screen ">
       <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Highlights />
         <WhyChooseUs />

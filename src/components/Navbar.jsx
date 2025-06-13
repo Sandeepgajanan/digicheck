@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center hover:scale-105 transition-transform duration-200">
           <Link href="/" className="block">
             <Image
-              src="/almasons-logo.webp"
+              src="/mainlogo/nav.webp"
               alt="Almasons Logo"
               width={120}
               height={40}
@@ -53,7 +53,6 @@ export default function Navbar() {
         {/* Center: Navigation Links */}
         <div className="hidden md:flex items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12">
           {navItems.map((item) => {
-            const isActive = pathname === item.path;
             return (
               <div key={item.path} className="relative flex items-center">
                 <Link
@@ -74,11 +73,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <Button label="Contact" link="/contact" />
         </div>
-
-       
       </nav>
-
- 
     </header>
   );
 }

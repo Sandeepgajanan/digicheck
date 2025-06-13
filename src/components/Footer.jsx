@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="w-full md:w-1/3 flex flex-col gap-4">
             <div className="relative  w-40 h-12">
               <Image
-                src="/footer-logo.webp"
+                src="/mainlogo/footer.webp"
                 alt="Almasons Logo"
                 fill
                 sizes="160px"
@@ -27,16 +27,29 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-4 mt-2">
-              {socialLinks.map(({ name, href, iconClass }) => (
+              {socialLinks.map(({ name, href, img }) => (
                 <a
                   key={name}
                   href={href}
                   aria-label={name}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-zinc-700 transition-all duration-300 ease-in-out shadow-md hover:shadow-zinc-400/20 hover:scale-110 backdrop-blur-sm"
+                  className="w-10 h-10 flex items-center justify-center rounded-full 
+               bg-zinc-900 hover:bg-zinc-700 ring-1 ring-zinc-700/50 
+               hover:ring-zinc-500/60 transition-all duration-300 
+               ease-in-out shadow-md hover:shadow-zinc-500/30 
+               hover:scale-110 backdrop-blur-sm group"
                 >
-                  <i className={`${iconClass} text-white text-lg`}></i>
+                  <div className="relative w-5 h-5 transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={img}
+                      alt={name}
+                      fill
+                      sizes="24px"
+                      priority
+                      className="object-cover object-center"
+                    />
+                  </div>
                 </a>
               ))}
             </div>

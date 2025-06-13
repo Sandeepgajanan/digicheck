@@ -19,7 +19,11 @@ const Button = ({ label, link, color = "zinc-800" }) => {
         >
           <div className="relative w-4 h-6">
             <Image
-              src={color === "white" ? "/arrow-black.svg" : "/arrow-white.svg"}
+              src={
+                color === "white"
+                  ? "/icons/arrow-black.svg"
+                  : "/icons/arrow-white.svg"
+              }
               alt="arrow"
               sizes="16px"
               fill

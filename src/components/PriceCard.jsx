@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "./Button";
-
+import Image from "next/image";
 const PriceCard = ({
   title,
   subtitle,
@@ -55,14 +55,19 @@ const PriceCard = ({
           <li key={idx} className="flex items-center gap-2">
             <div
               className={`w-6 h-6 ${
-                index === 1 ? "bg-white" : "bg-zinc-400"
+                index === 1 ? "bg-white" : "bg-orange-400"
               } rounded-full flex items-center justify-center`}
             >
-              <i
-                className={`ri-check-line ${
-                  index === 1 ? "text-orange-500" : "text-white"
-                }`}
-              ></i>
+              <Image
+                src={
+                  index === 1
+                    ? "/icons/check-black.svg"
+                    : "/icons/check-white.svg"
+                }
+                alt="check icon"
+                width={16}
+                height={16}
+              />
             </div>
             <span>{item}</span>
           </li>
@@ -72,7 +77,7 @@ const PriceCard = ({
       <div className="pl-8 pt-4">
         <Button
           label="Get started"
-          link="#"
+          link="/contact"
           color={index === 1 ? "white" : undefined}
         />
       </div>

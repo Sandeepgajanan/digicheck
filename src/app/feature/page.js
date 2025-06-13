@@ -5,7 +5,7 @@ import Heading from "@/components/Heading";
 
 export default function Feature() {
   return (
-    <section className="w-full min-h-screen py-10 text-zinc-800">
+    <section className="w-full min-h-screen  text-zinc-800 lg:py-20">
       <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Features"

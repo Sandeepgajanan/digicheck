@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const FeatureCard = ({ image, title, desc }) => {
   return (
-    <div className="relative w-72 h-66  md:w-96 md:h-66 border-none bg-white rounded-xl  shadow-[4px_4px_12px_rgba(251,146,60,0.2)] transform  transition-all duration-300 flex flex-col group ">
+    <div className="relative w-72 h-66  lg:w-80 lg:h-66 border-none bg-white rounded-xl  shadow-[4px_4px_12px_rgba(251,146,60,0.2)] transform  transition-all duration-300 flex flex-col group ">
       {/* Image and Title Section */}
       <div className="p-6 flex-none ">
         <div className="flex items-center gap-4  ">
@@ -25,7 +25,7 @@ const FeatureCard = ({ image, title, desc }) => {
           </div>
         </div>
       </div>
-      <div className="absolute w-[25.4rem] bg-[#ffaa7c] h-24 rounded-md top-2  -left-3 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"></div>
+      <div className="absolute w-[22rem] bg-[#ffaa7c] h-24 rounded-md top-2 -left-4  pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"></div>
 
       {/* Description - Flexible height */}
       <div className="px-6 flex-grow mt-4">

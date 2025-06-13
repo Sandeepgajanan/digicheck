@@ -14,7 +14,7 @@ const WhyUsCard = ({ title, desc, image }) => {
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         {/* title &desc */}
 
         <div className="w-72 relative h-fit bg-[#ffdecc] p-4 rounded-b-xl lg:absolute lg:-bottom-8 lg:left-8  lg:w-80 lg:h-28 z-20 shadow-lg ">
@@ -25,10 +25,14 @@ const WhyUsCard = ({ title, desc, image }) => {
         {/* star */}
         <div className="hidden absolute bottom-16 left-12 bg-orange-400 w-8 h-8 rounded-lg shadow-md lg:flex items-center justify-center z-30">
           <div className="relative w-4 h-4">
-            <Image src={"/star.svg"} alt="star" fill className="object-cover" />
+            <Image
+              src={"/icons/star.svg"}
+              alt="star"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
-
       </div>
       {/* read more */}
       <div className="h-fit w-fit px-1 py-2 bg-zinc-300 rounded-md m-1 rotate-180 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out max-sm:hidden">
@@ -36,7 +40,6 @@ const WhyUsCard = ({ title, desc, image }) => {
           Read More
         </h1>
       </div>
-      
     </div>
   );
 };

@@ -2,17 +2,17 @@ export const socialLinks = [
   {
     name: "Facebook",
     href: "#",
-    iconClass: "ri-facebook-line",
+    img: "/icons/facebook.svg",
   },
   {
     name: "Twitter",
     href: "#",
-    iconClass: "ri-twitter-x-line",
+    img: "/icons/twitter.svg",
   },
   {
     name: "Instagram",
     href: "#",
-    iconClass: "ri-instagram-line",
+    img: "/icons/instagram.svg",
   },
 ];
 

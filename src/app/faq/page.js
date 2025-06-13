@@ -16,7 +16,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="w-full min-h-screen py-5 md:py-20  text-zinc-800">
+    <section className="w-full min-h-screen py-5   text-zinc-800 lg:py-20">
       {/* LEFT - Image */}
       <div className="max-w-screen-xl mx-auto w-full h-full px-4  ">
         <Heading
@@ -50,7 +50,11 @@ export default function Faq() {
                     </span>
                     <div className="relative w-5 h-5">
                       <Image
-                        src={openItems[index] ? "/remove.svg" : "/add.svg"}
+                        src={
+                          openItems[index]
+                            ? "/icons/remove.svg"
+                            : "/icons/add.svg"
+                        }
                         alt={openItems[index] ? "Collapse" : "Expand"}
                         fill
                         className="object-contain"

@@ -5,7 +5,7 @@ import Heading from "@/components/Heading";
 
 export default function Highlights() {
   return (
-    <section className="w-full min-h-screen py-10">
+    <section className="w-full min-h-screen lg:py-20">
       <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Highlights"
