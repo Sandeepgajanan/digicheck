@@ -3,13 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Button = ({ label, link, color = "zinc-800" }) => {
+  const bgMap = {
+    white: "bg-white text-zinc-800",
+    "zinc-800": "bg-zinc-800 text-zinc-100",
+  };
+
+  const colorKey = color === "zinc-800" ? "zinc-800" : "white";
+  const colorClass = bgMap[colorKey];
+
   return (
     <Link href={link} className="inline-block">
       <button
         type="button"
-        className={`flex items-center justify-center gap-2 py-2 px-4 min-w-36  rounded-md bg-${color}  ${
-          color === "white" ? "text-zinc-800" : "text-zinc-100"
-        } border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group h-
+        className={`flex items-center justify-center gap-2 py-2 px-4 min-w-36  rounded-md  ${colorClass} border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group h-
        `}
       >
         <span>{label}</span>

@@ -13,7 +13,7 @@ export default function Feature() {
         />
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-18 place-items-center">
           {featureData.map((feature, index) => (
             <FeatureCard
               key={`feature-${index}`} // Added more specific key

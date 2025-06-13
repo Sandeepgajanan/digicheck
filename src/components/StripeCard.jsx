@@ -1,19 +1,19 @@
 import React from "react";
 import Image from "next/image";
 
-const StripeCard = ({ image }) => {
+const StripeCard = React.memo(({ image }) => {
   return (
-    <div className="w-36 h-20 relative rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex-shrink-0">
+    <div className="w-20 h-20 relative flex-shrink-0 rounded-md overflow-hidden ">
       <Image
         src={image}
         alt="Partner logo"
         fill
+        sizes="80px"
         priority
-        sizes="144px"
-        className="object-contain p-2"
+        className="object-contain"
       />
     </div>
   );
-};
+});
 
 export default StripeCard;

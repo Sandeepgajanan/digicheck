@@ -28,6 +28,5 @@ export const featureData = [
     title: "Team Collaboration",
     desc: "Enhanced team productivity with integrated chat, task management, and file sharing.",
     image: "/art.webp",
-  }
+  },
 ];
-
