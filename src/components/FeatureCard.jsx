@@ -8,7 +8,7 @@ const FeatureCard = ({ image, title, desc }) => {
       {/* Image and Title Section */}
       <div className="p-6 flex-none ">
         <div className="flex items-center gap-4  ">
-          <div className="relative w-14 h-14 flex-shrink-0 bg-orange-400 rounded-full overflow-hidden z-30">
+          <div className="relative w-14 h-14 flex-shrink-0 bg-orange-400 rounded-full overflow-hidden z-10">
             {/* <Image
               src={image}
               alt={title}
@@ -17,7 +17,7 @@ const FeatureCard = ({ image, title, desc }) => {
               className="object-cover"
             /> */}
           </div>
-          <div className="relative z-30">
+          <div className="relative z-10">
             <h4 className="font-semibold text-xl text-zinc-800 font-[MyFont]  ">
               {title}
             </h4>

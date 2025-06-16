@@ -4,7 +4,6 @@ import SmoothScroll from "@/utils/SmoothScroll";
 import Cursor from "@/utils/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AosWrapper from "@/utils/AosWrapper";
 
 export const metadata = {
   title: "DigiCheck",
@@ -34,7 +33,7 @@ export default function RootLayout({ children }) {
         <SmoothScroll />
         <Cursor />
         <Navbar />
-        <main><AosWrapper/>{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
