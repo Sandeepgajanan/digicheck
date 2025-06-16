@@ -11,25 +11,27 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Set initial state
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
+  }, []);
 
   useEffect(() => {
+    const html = document.documentElement;
+
     if (mobileOpen) {
+      html.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      html.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "";
+      html.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [mobileOpen]);
 
@@ -41,9 +43,9 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 w-full z-40 ">
         <nav
-          className={`max-w-screen-xl mx-auto w-full h-16 px-6 flex items-center justify-between  transition-all duration-300 ${
+          className={`max-w-screen-xl mx-auto w-full h-16  px-4 lg:px-6 flex items-center justify-between  transition-all duration-300 ${
             scrolled
-              ? "bg-white/30 backdrop-blur-lg shadow-lg "
+              ? "bg-white/10 backdrop-blur-lg shadow-lg "
               : "bg-transparent backdrop-blur-md shadow  "
           }`}
         >
@@ -55,7 +57,7 @@ export default function Navbar() {
                 alt="Almasons Logo"
                 width={120}
                 height={40}
-                className="w-20 sm:w-24 md:w-28 lg:w-32"
+                className="w-16  lg:w-32"
                 priority
               />
             </Link>
@@ -68,9 +70,7 @@ export default function Navbar() {
                 <div key={item.path} className="relative flex items-center">
                   <Link
                     href={item.path}
-                    className="px-1 py-0.5 font-medium transition-colors duration-200 text-sm sm:text-base text-zinc-800  group relative ${
-                   
-                "
+                    className="px-1 py-0.5 font-medium transition-colors duration-200 text-sm sm:text-base text-zinc-800  group relative "
                   >
                     {item.label}
                     <div className=" h-[3px] bg-orange-400 w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
@@ -84,32 +84,42 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <Button label="Contact" link="/contact" />
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden pr-4">
             <button
               onClick={toggleMenu}
               className="text-zinc-800 focus:outline-none"
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 relative">
-                <Image
-                alt="menu"
-                  src={"/icons/menu-open.svg"}
-                  fill
-                  sizes=""
-                  className="object-center"
-                />
+                {!mobileOpen ? (
+                  <Image
+                    alt="menu"
+                    src={"/icons/menu-open.svg"}
+                    fill
+                    sizes=""
+                    className="object-center"
+                  />
+                ) : (
+                  <Image
+                    alt="menu"
+                    src={"/icons/close-line.svg"}
+                    fill
+                    sizes=""
+                    className="object-center"
+                  />
+                )}
               </div>
             </button>
           </div>
         </nav>
       </header>
       {mobileOpen && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-white z-30 overflow-hidden flex flex-col items-center justify-center gap-6">
+        <div className="fixed top-16 left-0 w-full min-h-screen bg-white z-30 overflow-hidden flex flex-col items-center justify-center gap-4 px-4">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className="text-xl font-semibold text-zinc-800"
+              className="text-xl font-semibold text-zinc-800 py-2"
               onClick={() => setMobileOpen(false)}
             >
               {item.label}
