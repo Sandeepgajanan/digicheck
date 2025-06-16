@@ -13,7 +13,10 @@ export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
   return (
-    <section className="w-full min-h-screen bg-white text-zinc-900 lg:py-20 ">
+    <section
+      className="w-full min-h-screen bg-white text-zinc-900 lg:py-20 "
+     
+    >
       <div className="max-w-screen-xl mx-auto w-full h-full px-4">
         <Heading
           title="Pricing"
@@ -53,7 +56,7 @@ export default function PricingPage() {
         </div>
 
         {/* Price Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-8 lg:gap-18">
           {priceData.map((plan, index) => (
             <PriceCard
               key={index}
@@ -68,10 +71,10 @@ export default function PricingPage() {
           {compareData.map((item, index) => (
             <div
               key={index}
-              className={` min-w-96 h-96 p-5 shadow-md rounded-2xl backdrop-blur-md space-y-6 scale-105 border border-zinc-400 ${
+              className={` lg:min-w-96 lg:h-96 p-5 shadow-md rounded-2xl backdrop-blur-md space-y-6 scale-105 border border-zinc-400 ${
                 index === 0
-                  ? "bg-zinc-50/40   text-zinc-800 -rotate-4 hover:rotate-0 transition-all duration-300 ease-in-out "
-                  : "bg-indigo-50/40 text-zinc-800   rotate-4 hover:rotate-0 transition-all duration-300 ease-in-out"
+                  ? "bg-zinc-50/40   text-zinc-800 lg:-rotate-4 hover:rotate-0 transition-all duration-300 ease-in-out "
+                  : "bg-indigo-50/40 text-zinc-800  lg:rotate-4 hover:rotate-0 transition-all duration-300 ease-in-out"
               }`}
             >
               <h3 className="text-2xl font-bold ">{item.heading}</h3>

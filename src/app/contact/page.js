@@ -2,18 +2,26 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Heading from "@/components/Heading";
+import { socialLinks } from "@/data/footerdata";
+import { contactData } from "@/data/contactdata";
+import Button from "@/components/Button";
+import Brand from "../brand/page";
+import MiniPrice from "../miniprice/page";
+import Faq from "../faq/page";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log(formData);
   };
 
@@ -25,153 +33,216 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full min-h-screen py-20 px-10 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-zinc-600 max-w-2xl mx-auto">
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
-          </p>
-        </div>
+    <>
+      <section className="w-full min-h-screen lg:py-20 py-5 ">
+        <div className="max-w-screen-xl mx-auto w-full h-full px-4">
+          <Heading />
+          <div className="flex flex-col-reverse lg:flex-row gap-2 px-6 w-full ">
+            {/* Contact Information */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-xl font-semibold mb-4">
-                Contact Information
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">📍</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Address</h4>
-                    <p className="text-gray-600">
-                      123 Business Street, Suite 100, City, Country
-                    </p>
-                  </div>
+            <div className="rounded-2xl bg-zinc-50 shadow-lg px-1 lg:px-4 py-2   w-full lg:w-1/3">
+              <div className="bg-gray-700 text-zinc-100 rounded-2xl p-3 lg:p-10 flex flex-col h-full justify-between">
+                {/* Heading */}
+                <div className="space-y-4 ">
+                  <h3 className="text-2xl font-bold ">
+                    Contact Information
+                  </h3>
+                  <p className="text-zinc-300 mb-4 lg:mb-0">
+                    We’d love to hear from you. Let’s start a conversation!
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">📞</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                  </div>
+                {/* Contact List */}
+                <div className="space-y-2 lg:space-y-8">
+                  {contactData?.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-4 h-4 lg:w-6 lg:h-6 relative">
+                        <Image
+                          src={item.img}
+                          alt={item}
+                          fill
+                          sizes="24px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <a
+                          href={item.href}
+                          className="text-zinc-300 hover:underline hover:text-white transition-colors"
+                        >
+                          {item.value}
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">✉️</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-600">contact@example.com</p>
-                  </div>
+                {/* Social Icons */}
+                <div className="flex gap-4 mt-4 lg:mt-0">
+                  {socialLinks.map(({ name, href, img }) => (
+                    <a
+                      key={name}
+                      href={href}
+                      aria-label={name}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 flex items-center justify-center rounded-full 
+                     bg-zinc-900  ring-1 ring-zinc-700/50 
+                     transition-all duration-300 
+                     ease-in-out shadow-md 
+                      backdrop-blur-sm group"
+                    >
+                      <div className="relative w-5 h-5 transition-transform duration-300 group-hover:scale-105">
+                        <Image
+                          src={img}
+                          alt={name}
+                          fill
+                          sizes="24px"
+                          priority
+                          className="object-contain object-center"
+                        />
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="relative h-[300px] rounded-lg overflow-hidden">
-              <Image
-                src="/map.png"
-                alt="Office Location"
-                fill
-                className="object-cover"
-              />
+            {/* Contact Form */}
+            <div className="rounded-2xl bg-zinc-50 shadow-lg py-10 px-4 flex-1">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="firstName"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName || ""}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border-b border-zinc-300 focus:outline-none"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="lastName"
+                      className="block text-sm font-medium text-gray-700 "
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName || ""}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border-b border-zinc-300 focus:outline-none"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 "
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border-b border-zinc-300 focus:outline-none"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Phone Number
+                    </label>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone || ""}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border-b border-zinc-300 focus:outline-none"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <p className="block text-sm font-medium text-gray-700 mb-8 ">
+                    Subject
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    {[
+                      "General Inquiry",
+                      "Support",
+                      "Feedback",
+                      "Careers",
+                      "Other",
+                    ].map((option) => (
+                      <label key={option} className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="subject"
+                          value={option}
+                          checked={formData.subject === option}
+                          onChange={handleChange}
+                          className="accent-blue-600"
+                          required
+                        />
+                        <span className="text-gray-700 text-sm">{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 "
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border-b border-zinc-300 focus:outline-none"
+                    required
+                  ></textarea>
+                </div>
+
+                <div className="w-full flex justify-end px-2 ">
+                  <Button label="Send Message" type="submit" />
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Brand/>
+      <MiniPrice/>
+      <Faq/>
+    </>
   );
 }

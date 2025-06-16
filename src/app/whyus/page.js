@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
           subtitle="Discover what sets us apart and why we're the right choice for your needs."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-18 place-items-center ">
           {whyUsData.map((item, index) => (
             <WhyUsCard key={index} {...item} />
           ))}

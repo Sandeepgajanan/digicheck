@@ -16,7 +16,7 @@ export default function Brand() {
           title="Trusted by these companies"
           subtitle="Used by forward-thinking companies worldwide"
         />
-        <div className="flex overflow-hidden  my-16  [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)] mx-auto w-2/3">
+        <div className="flex overflow-hidden mt-8  lg:my-16  [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)] mx-auto w-2/3">
           <motion.div
             animate={{
               x: "-50%",
@@ -26,7 +26,7 @@ export default function Brand() {
               ease: "linear",
               repeat: Infinity,
             }}
-            className="flex flex-none gap-32 pr-32"
+            className="flex flex-none  gap-16 pr-16 lg:gap-32 lg:pr-32"
           >
             {Array.from({ length: 2 }).map((_, i) => (
               <Fragment key={i}>
@@ -38,7 +38,7 @@ export default function Brand() {
           </motion.div>
         </div>
 
-        <div className="flex overflow-hidden  my-16  [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]  mx-auto w-2/3">
+        <div className="flex overflow-hidden mt-8 lg:my-16  [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]  mx-auto w-2/3">
           <motion.div
             initial={{ x: "-50%" }}
             animate={{ x: "0%" }}
@@ -47,7 +47,7 @@ export default function Brand() {
               ease: "linear",
               repeat: Infinity,
             }}
-            className="flex flex-none gap-32 pr-32"
+            className="flex flex-none  gap-16 pr-16 lg:gap-32 lg:pr-32"
           >
             {Array.from({ length: 2 }).map((_, i) => (
               <Fragment key={i}>

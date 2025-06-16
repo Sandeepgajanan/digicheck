@@ -46,7 +46,6 @@ const Footer = () => {
                       alt={name}
                       fill
                       sizes="24px"
-                      priority
                       className="object-cover object-center"
                     />
                   </div>
