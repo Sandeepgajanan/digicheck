@@ -21,6 +21,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
+      aria-label={label}
       className={`flex items-center justify-center gap-2 py-2 px-4 min-w-36  rounded-md  ${colorClass} border-none font-semibold text-sm shadow-md transition-all duration-200 active:scale-95 group h-
        `}
     >

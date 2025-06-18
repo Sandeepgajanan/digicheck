@@ -22,16 +22,16 @@ export default function Navbar() {
     const html = document.documentElement;
 
     if (mobileOpen) {
-      html.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
+      html.classList.add("no-scroll");
+      document.body.classList.add("no-scroll");
     } else {
-      html.style.overflow = "auto";
-      document.body.style.overflow = "auto";
+      html.classList.remove("no-scroll");
+      document.body.classList.remove("no-scroll");
     }
 
     return () => {
-      html.style.overflow = "auto";
-      document.body.style.overflow = "auto";
+      html.classList.remove("no-scroll");
+      document.body.classList.remove("no-scroll");
     };
   }, [mobileOpen]);
 
@@ -41,9 +41,11 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-40 ">
+      <header className="fixed top-0 left-0 w-full z-40" role="banner">
         <nav
-          className={`max-w-screen-xl mx-auto w-full h-16  px-4 lg:px-6 flex items-center justify-between  transition-all duration-300 ${
+          role="navigation"
+          aria-label="Main navigation"
+          className={` w-full h-16  px-4 lg:px-6 flex items-center justify-between  transition-all duration-300 ${
             scrolled
               ? "bg-white/10 backdrop-blur-lg shadow-lg "
               : "bg-transparent backdrop-blur-md shadow  "
@@ -51,7 +53,7 @@ export default function Navbar() {
         >
           {/* Left: Logo */}
           <div className="flex items-center hover:scale-105 transition-transform duration-200">
-            <Link href="/" className="block">
+            <Link href="/" className="block" aria-label="Home">
               <Image
                 src="/mainlogo/nav.webp"
                 alt="Almasons Logo"
@@ -59,21 +61,35 @@ export default function Navbar() {
                 height={40}
                 className="w-16  lg:w-32"
                 priority
+                aria-hidden="true"
               />
             </Link>
           </div>
 
           {/* Center: Navigation Links */}
-          <div className="hidden lg:flex items-center gap-4  lg:gap-12">
+          <div
+            className="hidden lg:flex items-center gap-4  lg:gap-12"
+            role="menubar"
+            aria-label="Main menu"
+          >
             {navItems.map((item) => {
               return (
-                <div key={item.path} className="relative flex items-center">
+                <div
+                  key={item.path}
+                  className="relative flex items-center"
+                  role="none"
+                >
                   <Link
                     href={item.path}
-                    className="px-1 py-0.5 font-medium transition-colors duration-200 text-sm sm:text-base text-zinc-800  group relative "
+                    className="px-1 py-0.5 font-medium transition-colors duration-200 text-sm sm:text-base text-zinc-800  group relative"
+                    role="menuitem"
+                    aria-label={item.label}
                   >
                     {item.label}
-                    <div className=" h-[3px] bg-orange-400 w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+                    <div
+                      className="h-[3px] bg-orange-400 w-0 group-hover:w-full transition-all duration-500 ease-in-out"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </div>
               );
@@ -89,23 +105,27 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="text-zinc-800 focus:outline-none"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               <div className="w-6 h-6 relative">
                 {!mobileOpen ? (
                   <Image
-                    alt="menu"
+                    alt="Open menu"
                     src={"/icons/menu-open.svg"}
                     fill
                     sizes=""
                     className="object-center"
+                    aria-hidden="true"
                   />
                 ) : (
                   <Image
-                    alt="menu"
+                    alt="Close menu"
                     src={"/icons/close-line.svg"}
                     fill
                     sizes=""
                     className="object-center"
+                    aria-hidden="true"
                   />
                 )}
               </div>
@@ -114,13 +134,20 @@ export default function Navbar() {
         </nav>
       </header>
       {mobileOpen && (
-        <div className="fixed top-16 left-0 w-full min-h-screen bg-white z-30 overflow-hidden flex flex-col items-center justify-center gap-4 px-4">
+        <div
+          id="mobile-menu"
+          className="fixed top-16 left-0 w-full min-h-screen bg-white z-30 overflow-hidden flex flex-col items-center justify-center gap-4 px-4"
+          role="navigation"
+          aria-label="Mobile menu"
+        >
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
               className="text-xl font-semibold text-zinc-800 py-2"
               onClick={() => setMobileOpen(false)}
+              role="menuitem"
+              aria-label={item.label}
             >
               {item.label}
             </Link>

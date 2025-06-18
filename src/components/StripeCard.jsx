@@ -3,7 +3,11 @@ import Image from "next/image";
 
 const StripeCard = React.memo(({ image }) => {
   return (
-    <div className="w-14 h-14 lg:w-20 lg:h-20 relative flex-shrink-0 rounded-md overflow-hidden ">
+    <article
+      className="w-14 h-14 lg:w-20 lg:h-20 relative flex-shrink-0 rounded-md overflow-hidden"
+      role="img"
+      aria-label="Partner logo"
+    >
       <Image
         src={image}
         alt="Partner logo"
@@ -12,7 +16,7 @@ const StripeCard = React.memo(({ image }) => {
         priority
         className="object-contain"
       />
-    </div>
+    </article>
   );
 });
 

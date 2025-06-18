@@ -10,7 +10,7 @@ import LiveProduct from "@/components/LiveProduct";
 
 export default function Home() {
   return (
-    <main className="min-h-screen ">
+    <main className="min-h-screen" role="main" aria-label="Main content">
       <Landing />
       <Brand />
       <LiveProduct/>

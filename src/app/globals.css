@@ -29,3 +29,8 @@ body {
   writing-mode: vertical-rl; /* top to bottom */
   text-orientation: upleft;
 }
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+  touch-action: none;
+}

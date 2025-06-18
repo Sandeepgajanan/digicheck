@@ -4,7 +4,10 @@ import Button from "./Button";
 
 const FeatureCard = ({ image, title, desc }) => {
   return (
-    <div className="relative w-72 h-66  lg:w-80 lg:h-66 border-none bg-white rounded-xl  shadow-[4px_4px_12px_rgba(251,146,60,0.2)] transform  transition-all duration-300 flex flex-col group ">
+    <article
+      aria-labelledby={`feature-title-${title}`}
+      className="relative w-72 h-66  lg:w-80 lg:h-66 border-none bg-white rounded-xl  shadow-[4px_4px_12px_rgba(251,146,60,0.2)] transform  transition-all duration-300 flex flex-col group "
+    >
       {/* Image and Title Section */}
       <div className="p-6 flex-none ">
         <div className="flex items-center gap-4  ">
@@ -15,10 +18,11 @@ const FeatureCard = ({ image, title, desc }) => {
               fill
               sizes={""}
               className="object-cover"
+                aria-label={`${title} icon`}
             /> */}
           </div>
           <div className="relative z-10">
-            <h4 className="font-semibold text-xl text-zinc-800 font-[MyFont]  ">
+            <h4   id={`feature-title-${title}`} className="font-semibold text-xl text-zinc-800 font-[MyFont]  ">
               {title}
             </h4>
             <div className="h-0.5 bg-white mt-1 w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
@@ -36,7 +40,7 @@ const FeatureCard = ({ image, title, desc }) => {
       <div className="p-6 flex justify-center">
         <Button label="Read More" link="/mainfeature" />
       </div>
-    </div>
+    </article>
   );
 };
 
