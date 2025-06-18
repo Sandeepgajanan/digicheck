@@ -3,25 +3,20 @@
 import { useState } from "react";
 import Heading from "@/components/Heading";
 import PriceCard from "@/components/PriceCard";
-import { priceData } from "@/data/pricedata";
 import Brand from "../brand/page";
 import Highlights from "../highlights/page";
 import Faq from "../faq/page";
+import { priceData, priceHeading } from "@/data/pricedata";
+import { priceToggleData } from "@/data/pricedata";
 import { compareData } from "@/data/comparedata";
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState("monthly");
-
+  const { title, subtitle } = priceHeading;
   return (
-    <section
-      className="w-full min-h-screen bg-white text-zinc-900 lg:py-20 "
-     
-    >
+    <section className="w-full min-h-screen bg-white text-zinc-900 lg:py-20 ">
       <div className="max-w-screen-xl mx-auto w-full h-full px-4">
-        <Heading
-          title="Pricing"
-          subtitle="Flexible plans tailored to your needs."
-        />
+        <Heading title={title} subtitle={subtitle} />
 
         {/* Toggle billing cycle */}
         <div className="flex justify-center items-center ">
@@ -35,22 +30,22 @@ export default function PricingPage() {
 
             {/* Monthly Button */}
             <button
-              onClick={() => setBillingCycle("monthly")}
+              onClick={() => setBillingCycle(priceToggleData.monthly)}
               className={`w-1/2 z-10 text-sm font-semibold transition-colors duration-300 ${
                 billingCycle === "monthly" ? "text-white" : "text-zinc-700"
               }`}
             >
-              Monthly
+              {priceToggleData.monthly}
             </button>
 
             {/* Yearly Button */}
             <button
-              onClick={() => setBillingCycle("yearly")}
+              onClick={() => setBillingCycle(priceToggleData.yearly)}
               className={`w-1/2 z-10 text-sm font-semibold transition-colors duration-300 ${
                 billingCycle === "yearly" ? "text-white" : "text-zinc-700"
               }`}
             >
-              Yearly
+              {priceToggleData.yearly}
             </button>
           </div>
         </div>

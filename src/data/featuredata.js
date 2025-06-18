@@ -1,3 +1,8 @@
+export const featureHeading = {
+  title: "Features",
+  subtitle: "Tools that streamline your workflow and maximize output.",
+};
+
 export const featureData = [
   {
     title: "AI-Powered Analytics",
@@ -30,3 +35,7 @@ export const featureData = [
     image: "/art.webp",
   },
 ];
+export const featureCardData = {
+  ctaLabel: "Read More",
+  ctaLink: "/mainfeature",
+};

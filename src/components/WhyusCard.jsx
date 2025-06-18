@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { whyusCardData } from "@/data/whyusdata";
 
 const WhyUsCard = ({ title, desc, image }) => {
+  const { ctaLabel, ctaLink, starIcon } = whyusCardData;
   return (
     <article className="flex group" aria-labelledby={`whyus-title-${title}`}>
       <div className="relative">
@@ -42,12 +44,7 @@ const WhyUsCard = ({ title, desc, image }) => {
           aria-label="Featured highlight"
         >
           <div className="relative w-4 h-4">
-            <Image
-              src={"/icons/star.svg"}
-              alt="star"
-              fill
-              className="object-cover"
-            />
+            <Image src={starIcon} alt="star" fill className="object-cover" />
           </div>
         </div>
       </div>
@@ -58,7 +55,7 @@ const WhyUsCard = ({ title, desc, image }) => {
         aria-label="Read more about this feature"
       >
         <h1 className="text-zinc-800 font-semibold text-xs uppercase vertical-text">
-          Read More
+          {ctaLabel}
         </h1>
       </div>
     </article>

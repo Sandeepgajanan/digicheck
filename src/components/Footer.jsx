@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { socialLinks, columns } from "../data/footerdata";
+import {
+  socialLinks,
+  columns,
+  companyInfo,
+  legalLinks,
+} from "../data/footerdata";
 
 const Footer = () => {
+  const { image, description, copyright } = companyInfo;
   return (
     <footer className="w-full bg-zinc-900 py-10 text-white" role="contentinfo">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,8 +19,8 @@ const Footer = () => {
           <div className="w-full md:w-1/3 flex flex-col gap-4">
             <div className="relative w-40 h-12">
               <Image
-                src="/mainlogo/footer.webp"
-                alt="Almasons Logo"
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="160px"
                 priority
@@ -22,12 +28,18 @@ const Footer = () => {
                 aria-label="Company logo"
               />
             </div>
-            <p className="text-base md:text-lg w-2/3" aria-label="Company description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt.
+            <p
+              className="text-base md:text-lg w-2/3"
+              aria-label="Company description"
+            >
+              {description}
             </p>
 
-            <div className="flex gap-4 mt-2" role="navigation" aria-label="Social media links">
+            <div
+              className="flex gap-4 mt-2"
+              role="navigation"
+              aria-label="Social media links"
+            >
               {socialLinks.map(({ name, href, img }) => (
                 <a
                   key={name}
@@ -56,17 +68,31 @@ const Footer = () => {
           </div>
 
           {/* Link Columns */}
-          <div className="w-full md:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-8 text-base" role="navigation" aria-label="Footer links">
+          <div
+            className="w-full md:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-8 text-base"
+            role="navigation"
+            aria-label="Footer links"
+          >
             {columns.map(({ heading, items }) => (
               <div key={heading}>
-                <h3 className="font-semibold mb-4" id={`footer-${heading.toLowerCase()}`}>{heading}</h3>
-                <ul className="space-y-2" aria-labelledby={`footer-${heading.toLowerCase()}`}>
+                <h3
+                  className="font-semibold mb-4"
+                  id={`footer-${heading.toLowerCase()}`}
+                >
+                  {heading}
+                </h3>
+                <ul
+                  className="space-y-2"
+                  aria-labelledby={`footer-${heading.toLowerCase()}`}
+                >
                   {items.map(({ label, href }) => (
                     <li
                       key={label}
                       className="hover:text-orange-400 cursor-pointer transition-colors"
                     >
-                      <Link href={href} aria-label={label}>{label}</Link>
+                      <Link href={href} aria-label={label}>
+                        {label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -76,15 +102,26 @@ const Footer = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-xs gap-4 sm:gap-0" role="contentinfo">
-          <div aria-label="Copyright information">© 2025 All rights reserved</div>
-          <div className="flex gap-6" role="navigation" aria-label="Legal links">
-            <Link href="/privacy-policy" className="hover:underline" aria-label="Privacy Policy">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:underline" aria-label="Terms and Conditions">
-              Terms & Conditions
-            </Link>
+        <div
+          className="flex flex-col sm:flex-row justify-between items-center pt-8 text-xs gap-4 sm:gap-0"
+          role="contentinfo"
+        >
+          <div aria-label="Copyright information">{copyright}</div>
+          <div
+            className="flex gap-6"
+            role="navigation"
+            aria-label="Legal links"
+          >
+            {legalLinks.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="hover:underline"
+                aria-label={label}
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

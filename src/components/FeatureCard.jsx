@@ -1,8 +1,10 @@
 import React from "react";
 // import Image from "next/image";
 import Button from "./Button";
+import { featureCardData } from "@/data/featuredata";
 
 const FeatureCard = ({ image, title, desc }) => {
+  const { ctaLabel, ctaLink } = featureCardData;
   return (
     <article
       aria-labelledby={`feature-title-${title}`}
@@ -22,7 +24,10 @@ const FeatureCard = ({ image, title, desc }) => {
             /> */}
           </div>
           <div className="relative z-10">
-            <h4   id={`feature-title-${title}`} className="font-semibold text-xl text-zinc-800 font-[MyFont]  ">
+            <h4
+              id={`feature-title-${title}`}
+              className="font-semibold text-xl text-zinc-800 font-[MyFont]  "
+            >
               {title}
             </h4>
             <div className="h-0.5 bg-white mt-1 w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
@@ -38,7 +43,7 @@ const FeatureCard = ({ image, title, desc }) => {
 
       {/* CTA Button - Fixed at bottom */}
       <div className="p-6 flex justify-center">
-        <Button label="Read More" link="/mainfeature" />
+        <Button label={ctaLabel} link={ctaLink} />
       </div>
     </article>
   );

@@ -77,3 +77,26 @@ export const columns = [
     ],
   },
 ];
+
+// Add company information
+export const companyInfo = {
+  image: {
+    src: "/mainlogo/footer.webp",
+    alt: "DigiCheck Logo",
+  },
+  description:
+    "DigiCheck is an advanced automotive diagnostic and monitoring system that provides real-time vehicle health checks and maintenance alerts.",
+  copyright: "© 2025 DigiCheck. All rights reserved.",
+};
+
+// Add legal links
+export const legalLinks = [
+  {
+    label: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    label: "Terms & Conditions",
+    href: "/terms",
+  },
+];

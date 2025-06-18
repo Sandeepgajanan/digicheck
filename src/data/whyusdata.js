@@ -1,3 +1,8 @@
+export const whyusdataHeading = {
+  title: "Why Choose Us",
+  subtitle:
+    "Discover what sets us apart and why we're the right choice for your needs.",
+};
 export const whyUsData = [
   {
     image: "/img1.webp",
@@ -15,3 +20,9 @@ export const whyUsData = [
     desc: "Plug-and-play APIs and seamless onboarding for effortless integration.",
   },
 ];
+
+export const whyusCardData = {
+  ctaLabel: "Read More",
+  ctaLink: "#",
+  starIcon: "/icons/star.svg",
+};

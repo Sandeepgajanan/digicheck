@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { faqData } from "@/data/faqdata";
+import { faqData, faqPageData } from "@/data/faqdata";
 import Heading from "@/components/Heading";
 import Button from "@/components/Button";
 
@@ -11,24 +11,22 @@ export default function Faq() {
   const toggle = (index) => {
     setOpenItems((prev) => ({
       ...prev,
-      [index]: !prev[index], // toggle boolean for that index
+      [index]: !prev[index],
     }));
   };
 
+  const { heading, image, icons, subheading, ctaLabel, ctaLink } = faqPageData;
   return (
     <section className="w-full min-h-screen py-5   text-zinc-800 lg:py-20">
       {/* LEFT - Image */}
       <div className="max-w-screen-xl mx-auto w-full h-full px-4  ">
-        <Heading
-          title="Customer's frequently asked questions"
-          subtitle="Find quick answers to common questions about our services"
-        />
+        <Heading title={heading.title} subtitle={heading.subtitle} />
         <div className="flex flex-col lg:flex-row items-center  lg:items-start w-full h-full gap-18 ">
           <div className="w-56 h-44 lg:w-1/2 lg:h-96  ">
             <div className="relative w-full rounded-md h-full overflow-hidden">
               <Image
-                src="/faq.webp"
-                alt="FAQ Illustration"
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="50vw"
                 className="object-cover"
@@ -50,11 +48,7 @@ export default function Faq() {
                     </span>
                     <div className="relative w-5 h-5">
                       <Image
-                        src={
-                          openItems[index]
-                            ? "/icons/remove.svg"
-                            : "/icons/add.svg"
-                        }
+                        src={openItems[index] ? icons.collapse : icons.expand}
                         alt={openItems[index] ? "Collapse" : "Expand"}
                         fill
                         className="object-contain"
@@ -75,13 +69,9 @@ export default function Faq() {
         </div>
         <div className=" p-2 md:p-10 bg-zinc-100 rounded-xl mt-20">
           <div className="bg-white rounded-xl py-20 text-center">
-            <h2 className="text-2xl font-semibold mb-4">
-              Stop Thinking, Start Building
-            </h2>
-            <p className="text-zinc-600 mb-6">
-              Transform your ideas into reality with our powerful solutions
-            </p>
-            <Button label="Get Started" link="/contact" />
+            <h2 className="text-2xl font-semibold mb-4">{subheading.title}</h2>
+            <p className="text-zinc-600 mb-6">{subheading.subtitle}</p>
+            <Button label={ctaLabel} link={ctaLink} />
           </div>
         </div>
       </div>

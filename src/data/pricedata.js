@@ -1,3 +1,7 @@
+export const priceHeading = {
+  title: "Pricing",
+  subtitle: "Flexible plans tailored to your needs.",
+};
 export const priceData = [
   {
     title: "Basic",
@@ -45,3 +49,14 @@ export const priceData = [
     isPopular: false,
   },
 ];
+export const priceToggleData = {
+  monthly: "monthly",
+  yearly: "yearly",
+};
+export const priceData2 = {
+  popularBadge: "Popular",
+  ctaLabel: "Get started",
+  ctaLink: "/contact",
+  checkBlack: "/icons/check-black.svg",
+  checkWhite: "/icons/check-white.svg",
+};

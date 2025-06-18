@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { buttonIcons } from "@/data/buttondata";
 const Button = ({
   label,
   link,
@@ -34,8 +34,8 @@ const Button = ({
           <Image
             src={
               color === "white"
-                ? "/icons/arrow-black.svg"
-                : "/icons/arrow-white.svg"
+                ? buttonIcons.arrowBlack
+                : buttonIcons.arrowWhite
             }
             alt="arrow"
             sizes="16px"

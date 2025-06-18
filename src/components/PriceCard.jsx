@@ -2,12 +2,14 @@
 
 import Button from "./Button";
 import Image from "next/image";
+import { priceData2 } from "@/data/pricedata";
 const PriceCard = ({
   title,
   subtitle,
   description,
   price,
   yearlyPrice,
+  heading = "What's included",
   features,
   isPopular,
   index,
@@ -34,27 +36,38 @@ const PriceCard = ({
           role="status"
           aria-label="Popular plan"
         >
-          Popular
+          {priceData2.popularBadge}
         </div>
       )}
 
-      <div className="flex items-center gap-3" role="group" aria-label="Plan header">
+      <div
+        className="flex items-center gap-3"
+        role="group"
+        aria-label="Plan header"
+      >
         <div
           className="w-14 h-14 bg-white rounded-xl shadow-xl flex items-center justify-center"
           role="img"
           aria-label={`${title} icon`}
         >
-          <div className="w-8 h-8 bg-orange-500 rounded-full" aria-hidden="true"></div>
+          <div
+            className="w-8 h-8 bg-orange-500 rounded-full"
+            aria-hidden="true"
+          ></div>
         </div>
         <div>
-          <p className="text-sm" aria-label="Plan subtitle">{subtitle}</p>
+          <p className="text-sm" aria-label="Plan subtitle">
+            {subtitle}
+          </p>
           <h3 id={`price-title-${title}`} className="text-lg font-semibold">
             {title}
           </h3>
         </div>
       </div>
 
-      <p className="text-sm" aria-label="Plan description">{description}</p>
+      <p className="text-sm" aria-label="Plan description">
+        {description}
+      </p>
 
       <div
         className="text-5xl font-bold"
@@ -62,10 +75,14 @@ const PriceCard = ({
         role="text"
       >
         ${displayPrice}{" "}
-        <span className="text-base font-medium" aria-hidden="true">/{displayPeriod}</span>
+        <span className="text-base font-medium" aria-hidden="true">
+          /{displayPeriod}
+        </span>
       </div>
 
-      <p className="text-sm font-semibold" id={`features-title-${title}`}>What's included</p>
+      <p className="text-sm font-semibold" id={`features-title-${title}`}>
+        {heading}
+      </p>
       <ul
         className="space-y-2 text-sm"
         aria-label={`Features included in ${title} plan`}
@@ -82,9 +99,7 @@ const PriceCard = ({
             >
               <Image
                 src={
-                  index === 1
-                    ? "/icons/check-black.svg"
-                    : "/icons/check-white.svg"
+                  index === 1 ? priceData2.checkBlack : priceData2.checkWhite
                 }
                 alt=""
                 width={16}
@@ -97,10 +112,14 @@ const PriceCard = ({
         ))}
       </ul>
 
-      <div className="pl-8 pt-4" role="complementary" aria-label="Action section">
+      <div
+        className="pl-8 pt-4"
+        role="complementary"
+        aria-label="Action section"
+      >
         <Button
-          label="Get started"
-          link="/contact"
+          label={priceData2.ctaLabel}
+          link={priceData2.ctaLink}
           color={index === 1 ? "white" : undefined}
         />
       </div>

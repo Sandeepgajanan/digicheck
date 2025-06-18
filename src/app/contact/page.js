@@ -3,8 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import Heading from "@/components/Heading";
-import { socialLinks } from "@/data/footerdata";
-import { contactData } from "@/data/contactdata";
+import {
+  contactData,
+  contactHeading,
+  formLabels,
+  subjectOptions,
+} from "@/data/contactdata";
 import Button from "@/components/Button";
 import Brand from "../brand/page";
 import MiniPrice from "../miniprice/page";
@@ -31,12 +35,14 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     });
   };
-
+  const { contactTitle, contactSubtitle, contactInfo, ctaLabel, socialLinks } =
+    contactData;
+  const { title, subtitle } = contactHeading;
   return (
     <>
       <section className="w-full min-h-screen lg:py-20 py-5 ">
         <div className="max-w-screen-xl mx-auto w-full h-full px-4">
-          <Heading />
+          <Heading title={title} subtitle={subtitle} />
           <div className="flex flex-col-reverse lg:flex-row gap-2 px-6 w-full ">
             {/* Contact Information */}
 
@@ -44,17 +50,15 @@ export default function Contact() {
               <div className="bg-gray-700 text-zinc-100 rounded-2xl p-3 lg:p-10 flex flex-col h-full justify-between">
                 {/* Heading */}
                 <div className="space-y-4 ">
-                  <h3 className="text-2xl font-bold ">
-                    Contact Information
-                  </h3>
+                  <h3 className="text-2xl font-bold ">{contactTitle}</h3>
                   <p className="text-zinc-300 mb-4 lg:mb-0">
-                    We’d love to hear from you. Let’s start a conversation!
+                    {contactSubtitle}
                   </p>
                 </div>
 
                 {/* Contact List */}
                 <div className="space-y-2 lg:space-y-8">
-                  {contactData?.map((item, index) => (
+                  {contactInfo?.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <div className="w-4 h-4 lg:w-6 lg:h-6 relative">
                         <Image
@@ -117,7 +121,7 @@ export default function Contact() {
                       htmlFor="firstName"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      First Name
+                      {formLabels.firstName}
                     </label>
                     <input
                       type="text"
@@ -135,7 +139,7 @@ export default function Contact() {
                       htmlFor="lastName"
                       className="block text-sm font-medium text-gray-700 "
                     >
-                      Last Name
+                      {formLabels.lastName}
                     </label>
                     <input
                       type="text"
@@ -155,7 +159,7 @@ export default function Contact() {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 "
                     >
-                      Email
+                      {formLabels.email}
                     </label>
                     <input
                       type="email"
@@ -173,7 +177,7 @@ export default function Contact() {
                       htmlFor="phone"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Phone Number
+                      {formLabels.phone}
                     </label>
                     <input
                       type="text"
@@ -189,16 +193,10 @@ export default function Contact() {
 
                 <div>
                   <p className="block text-sm font-medium text-gray-700 mb-8 ">
-                    Subject
+                    {formLabels.subject}
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    {[
-                      "General Inquiry",
-                      "Support",
-                      "Feedback",
-                      "Careers",
-                      "Other",
-                    ].map((option) => (
+                    {subjectOptions.map((option) => (
                       <label key={option} className="flex items-center gap-2">
                         <input
                           type="radio"
@@ -220,7 +218,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-700 "
                   >
-                    Message
+                    {formLabels.message}
                   </label>
                   <textarea
                     id="message"
@@ -233,16 +231,16 @@ export default function Contact() {
                 </div>
 
                 <div className="w-full flex justify-end px-2 ">
-                  <Button label="Send Message" type="submit" />
+                  <Button label={ctaLabel} type="submit" />
                 </div>
               </form>
             </div>
           </div>
         </div>
       </section>
-      <Brand/>
-      <MiniPrice/>
-      <Faq/>
+      <Brand />
+      <MiniPrice />
+      <Faq />
     </>
   );
 }

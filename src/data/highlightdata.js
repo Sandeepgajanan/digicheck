@@ -1,4 +1,9 @@
-export const blogData = [
+export const highlightHeading = {
+  title: "Highlights",
+  subtitle: "What makes us stand out — at a glance.",
+};
+
+export const highlightData = [
   {
     title: "Blazing Speed",
     desc: "Optimized performance even at scale.",

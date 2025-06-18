@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const StripeCard = React.memo(({ image }) => {
+const BrandCard = ({ image }) => {
   return (
     <article
       className="w-14 h-14 lg:w-20 lg:h-20 relative flex-shrink-0 rounded-md overflow-hidden"
@@ -18,6 +18,6 @@ const StripeCard = React.memo(({ image }) => {
       />
     </article>
   );
-});
+};
 
-export default StripeCard;
+export default BrandCard;

@@ -15,3 +15,23 @@ export const faqData = [
       "DigiCheck is compatible with most vehicles manufactured after 1996 that have an OBD-II port. Our system supports all major car brands and models, including both gasoline and diesel engines. You can check your specific vehicle's compatibility on our website.",
   },
 ];
+export const faqPageData = {
+  heading: {
+    title: "Customer's frequently asked questions",
+    subtitle: "Find quick answers to common questions about our services",
+  },
+  image: {
+    src: "/faq.webp",
+    alt: "FAQ Illustration",
+  },
+  icons: {
+    expand: "/icons/add.svg",
+    collapse: "/icons/remove.svg",
+  },
+  subheading: {
+    title: "Stop Thinking, Start Building",
+    subtitle: "Transform your ideas into reality with our powerful solutions",
+  },
+  ctaLabel: "Get Started",
+  ctaLink: "/contact",
+};

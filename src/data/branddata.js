@@ -1,4 +1,9 @@
-export const stripeData = [
+export const brandHeading = {
+  title: "Highlights",
+  subtitle: "What makes us stand out — at a glance.",
+};
+
+export const brandData = [
   {
     id: 1,
     image: "/brandlogo/logo1.webp",
