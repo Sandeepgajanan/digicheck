@@ -1,12 +1,16 @@
 "use client";
 
-import { brandData, brandHeading } from "@/data/branddata";
+import { brandImgdata } from "@/data/common/brandimgdata";
 import BrandCard from "@/components/BrandCard";
 import Heading from "@/components/Heading";
 import { Fragment } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 export default function Brand() {
+  const { language } = useLanguage();
+  const brandHeading = getData(language, "brandHeading");
   const { title, subtitle } = brandHeading;
   return (
     <section className="w-full  text-center min-h-fit lg:py-20">
@@ -26,7 +30,7 @@ export default function Brand() {
           >
             {Array.from({ length: 2 }).map((_, i) => (
               <Fragment key={i}>
-                {brandData.map((brand, index) => (
+                {brandImgdata?.map((brand, index) => (
                   <BrandCard image={brand.image} key={index} />
                 ))}
               </Fragment>
@@ -47,7 +51,7 @@ export default function Brand() {
           >
             {Array.from({ length: 2 }).map((_, i) => (
               <Fragment key={i}>
-                {brandData.map((brand, index) => (
+                {brandImgdata?.map((brand, index) => (
                   <BrandCard image={brand.image} key={index} />
                 ))}
               </Fragment>

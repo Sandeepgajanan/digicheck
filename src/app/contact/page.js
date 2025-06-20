@@ -3,18 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import Heading from "@/components/Heading";
-import {
-  contactData,
-  contactHeading,
-  formLabels,
-  subjectOptions,
-} from "@/data/contactdata";
 import Button from "@/components/Button";
 import Brand from "../brand/page";
 import MiniPrice from "../miniprice/page";
 import Faq from "../faq/page";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 export default function Contact() {
+  const { language } = useLanguage();
+  const contactHeading = getData(language, "contactHeading");
+  const contactData = getData(language, "contactData");
+  const formLabels = getData(language, "formLabels");
+  const subjectOptions = getData(language, "subjectOptions");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",

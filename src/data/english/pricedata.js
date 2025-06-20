@@ -10,6 +10,7 @@ export const priceData = [
       "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.",
     price: 99,
     yearlyPrice: 899,
+    heading: "What's included",
     features: [
       "All analytics features",
       "Up to 250,000 tracked visits",
@@ -25,6 +26,7 @@ export const priceData = [
       "Perfect for growing teams who need advanced analytics & collaboration.",
     price: 199,
     yearlyPrice: 1799,
+    heading: "What's included",
     features: [
       "Everything in Basic",
       "Up to 1M tracked visits",
@@ -40,6 +42,7 @@ export const priceData = [
       "Custom solutions for large scale teams and enterprise clients.",
     price: 499,
     yearlyPrice: 4499,
+    heading: "What's included",
     features: [
       "Everything in Pro",
       "Unlimited tracked visits",

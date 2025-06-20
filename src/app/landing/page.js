@@ -1,9 +1,12 @@
 "use client";
-import { landingPageContent } from "@/data/landingdata";
 import Button from "@/components/Button";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 export default function Landing() {
+  const { language } = useLanguage();
+  const landingPageContent = getData(language, "landingPageContent");
   const { badge, title, subtitle, ctaLabel, ctaLink, image } =
     landingPageContent;
   return (
@@ -32,7 +35,7 @@ export default function Landing() {
         </div>
 
         <div className="flex-1 items-center flex justify-center">
-          <div className="relative mt-10 w-60 h-52 rounded-xl overflow-hidden bg-zinc-50 md:mt-16 md:h-96 md:w-96">
+          <div className="relative mt-10 w-60 h-52 rounded-xl overflow-hidden bg-zinc-50 md:mt-16 md:h-96 md:w-96 ">
             <Image
               src={image.src}
               alt={image.alt}

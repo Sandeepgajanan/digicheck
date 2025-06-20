@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import Button from "@/components/Button";
-import { miniPriceData } from "@/data/minipricedata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 export default function MiniPrice() {
-  const { title, ctaLabel, ctaLink, image } = miniPriceData;
+  const { language } = useLanguage();
+  const minipriceData = getData(language, "minipriceData");
+  const { title, ctaLabel, ctaLink, image } = minipriceData;
   return (
     <section className="w-full min-h-fit py-10 text-zinc-800">
       <div className="max-w-screen-xl mx-auto w-full px-4">

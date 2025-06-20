@@ -1,14 +1,20 @@
 "use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navItems } from "../data/navdata";
 import Button from "./Button";
-import { useState, useEffect } from "react";
+import LanguageDropdown from "./LanguageDropdown";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
-export default function Navbar() {
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const { language } = useLanguage();
+  const navItems = getData(language, "navItems");
+  const navHeading = getData(language, "navHeading");
+  const { ctaLabel, ctaLink } = navHeading;
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -97,10 +103,14 @@ export default function Navbar() {
           </div>
 
           {/* Right: Contact Button */}
-          <div className="hidden lg:flex items-center">
-            <Button label="Contact" link="/contact" />
+          <div className="hidden lg:flex items-center gap-2 ">
+            <LanguageDropdown />
+            <Button label={ctaLabel} link={ctaLink} />
           </div>
-          <div className="lg:hidden pr-4">
+
+          {/* mobile menu */}
+          <div className="lg:hidden flex w-28 gap-2 ">
+            <LanguageDropdown />
             <button
               onClick={toggleMenu}
               className="text-zinc-800 focus:outline-none"
@@ -161,4 +171,5 @@ export default function Navbar() {
       )}
     </>
   );
-}
+};
+export default Navbar;

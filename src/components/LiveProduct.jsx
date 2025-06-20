@@ -2,11 +2,15 @@ import React from "react";
 import Heading from "./Heading";
 import Button from "./Button";
 import Image from "next/image";
-import { liveProductHeading, liveProductData } from "@/data/liveproductdata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 const LiveProduct = () => {
-  const { title, subtitle } = liveProductHeading;
-  const { ctaLabel1, ctaLink1, ctaLabel2, ctaLink2, image } = liveProductData;
+  const { language } = useLanguage();
+  const liveproductHeading = getData(language, "liveproductHeading");
+  const liveproductData = getData(language, "liveproductData");
+  const { title, subtitle } = liveproductHeading;
+  const { ctaLabel1, ctaLink1, ctaLabel2, ctaLink2, image } = liveproductData;
 
   return (
     <section
@@ -24,7 +28,7 @@ const LiveProduct = () => {
         <Button label={ctaLabel2} link={ctaLink2} />
       </div>
       <div
-        className="relative w-full h-52  lg:h-[50rem] rounded-md overflow-hidden mt-4 px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10"
+        className="relative w-full h-52  lg:h-[130vh] rounded-md overflow-hidden mt-4 px-4 py-6  lg:px-8 lg:py-10   "
         role="img"
         aria-label="Product dashboard preview"
       >

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { buttonIcons } from "@/data/buttondata";
+import { buttonIcons } from "@/data/common/buttondata";
 const Button = ({
   label,
   link,

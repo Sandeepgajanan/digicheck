@@ -1,10 +1,13 @@
 import React from "react";
 // import Image from "next/image";
 import Button from "./Button";
-import { featureCardData } from "@/data/featuredata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 const FeatureCard = ({ image, title, desc }) => {
-  const { ctaLabel, ctaLink } = featureCardData;
+  const { language } = useLanguage();
+  const featurecardData = getData(language, "featurecardData");
+  const { ctaLabel, ctaLink } = featurecardData;
   return (
     <article
       aria-labelledby={`feature-title-${title}`}

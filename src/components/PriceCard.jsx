@@ -2,14 +2,15 @@
 
 import Button from "./Button";
 import Image from "next/image";
-import { priceData2 } from "@/data/pricedata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 const PriceCard = ({
   title,
   subtitle,
   description,
   price,
   yearlyPrice,
-  heading = "What's included",
+  heading,
   features,
   isPopular,
   index,
@@ -17,6 +18,8 @@ const PriceCard = ({
 }) => {
   const displayPrice = billingCycle === "monthly" ? price : yearlyPrice;
   const displayPeriod = billingCycle === "monthly" ? "month" : "year";
+  const { language } = useLanguage();
+  const priceData2 = getData(language, "priceData2");
 
   return (
     <article

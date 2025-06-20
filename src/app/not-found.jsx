@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
-import { notFoundData } from "@/data/notfounddata";
+import { notFoundData } from "@/data/english/notfounddata";
 
 export default function NotFound() {
   const { title, subtitle, description, ctaLabel, ctaLink } = notFoundData;

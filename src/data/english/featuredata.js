@@ -35,7 +35,7 @@ export const featureData = [
     image: "/art.webp",
   },
 ];
-export const featureCardData = {
+export const featurecardData = {
   ctaLabel: "Read More",
   ctaLink: "/mainfeature",
 };

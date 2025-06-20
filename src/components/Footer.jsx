@@ -1,14 +1,16 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  socialLinks,
-  columns,
-  companyInfo,
-  legalLinks,
-} from "../data/footerdata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const socialLinks = getData(language, "socialLinks");
+  const columns = getData(language, "columns");
+  const companyInfo = getData(language, "companyInfo");
+  const legalLinks = getData(language, "legalLinks");
   const { image, description, copyright } = companyInfo;
   return (
     <footer className="w-full bg-zinc-900 py-10 text-white" role="contentinfo">

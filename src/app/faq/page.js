@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { faqData, faqPageData } from "@/data/faqdata";
 import Heading from "@/components/Heading";
 import Button from "@/components/Button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 export default function Faq() {
   const [openItems, setOpenItems] = useState({});
@@ -14,7 +15,9 @@ export default function Faq() {
       [index]: !prev[index],
     }));
   };
-
+  const { language } = useLanguage();
+  const faqData = getData(language, "faqData");
+  const faqPageData = getData(language, "faqPageData");
   const { heading, image, icons, subheading, ctaLabel, ctaLink } = faqPageData;
   return (
     <section className="w-full min-h-screen py-5   text-zinc-800 lg:py-20">
@@ -37,7 +40,7 @@ export default function Faq() {
           {/* RIGHT - FAQ */}
           <div className="w-1/2 rounded-md shadow-md bg-gradient-to-b from-white to-gray-100 p-5 max-sm:w-full">
             <div className="space-y-6">
-              {faqData.map((faq, index) => (
+              {faqData?.map((faq, index) => (
                 <div key={index} className=" pb-4">
                   <button
                     onClick={() => toggle(index)}

@@ -4,3 +4,8 @@ export const navItems = [
   { label: "Resources", path: "/blog" },
   { label: "Pricing", path: "/price" },
 ];
+
+export const navHeading = {
+  ctaLabel: "Contact",
+  ctaLink: "/contact",
+};

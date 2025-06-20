@@ -1,9 +1,4 @@
-export const brandHeading = {
-  title: "Highlights",
-  subtitle: "What makes us stand out — at a glance.",
-};
-
-export const brandData = [
+export const brandImgdata = [
   {
     id: 1,
     image: "/brandlogo/logo1.webp",

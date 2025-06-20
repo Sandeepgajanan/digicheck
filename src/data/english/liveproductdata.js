@@ -1,10 +1,10 @@
-export const liveProductHeading = {
-  title: "Live Product review",
+export const liveproductHeading = {
+  title: "Live Product Review",
   subtitle:
-    "Watch how our product helps automotive companies streamline their operations and enhance safety measures through real-time monitoring and analytics.",
+    "See how our product boosts efficiency and safety with real-time insights.",
 };
 
-export const liveProductData = {
+export const liveproductData = {
   ctaLabel1: "Get Started for free",
   ctaLink1: "/contact",
   ctaLabel2: "Learn More",

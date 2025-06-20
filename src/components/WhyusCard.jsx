@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { whyusCardData } from "@/data/whyusdata";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getData } from "@/utils/getData";
 
 const WhyUsCard = ({ title, desc, image }) => {
-  const { ctaLabel, ctaLink, starIcon } = whyusCardData;
+  const { language } = useLanguage();
+  const whyuscardData = getData(language, "whyuscardData");
+  const { ctaLabel, ctaLink, starIcon } = whyuscardData;
   return (
     <article className="flex group" aria-labelledby={`whyus-title-${title}`}>
       <div className="relative">
