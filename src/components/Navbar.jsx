@@ -47,11 +47,14 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-40" role="banner">
+      <header
+        className="fixed top-0 left-0  box-border   w-full  z-40"
+        role="banner"
+      >
         <nav
           role="navigation"
           aria-label="Main navigation"
-          className={` w-full h-16  px-4 lg:px-6 flex items-center justify-between  transition-all duration-300 ${
+          className={`w-full h-16 px-2 lg:px-6 flex items-center justify-between  transition-all duration-300 ${
             scrolled
               ? "bg-white/10 backdrop-blur-lg shadow-lg "
               : "bg-transparent backdrop-blur-md shadow  "
@@ -109,7 +112,7 @@ const Navbar = () => {
           </div>
 
           {/* mobile menu */}
-          <div className="lg:hidden flex w-28 gap-2 ">
+          <div className="lg:hidden flex w-fit p-0.5 gap-2 ">
             <LanguageDropdown />
             <button
               onClick={toggleMenu}
@@ -146,7 +149,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="fixed top-16 left-0 w-full min-h-screen bg-white z-30 overflow-hidden flex flex-col items-center justify-center gap-4 px-4"
+          className="fixed top-16 left-0 w-full  min-h-screen bg-white z-30 overflow-hidden flex flex-col items-center  gap-8 pt-8 "
           role="navigation"
           aria-label="Mobile menu"
         >
