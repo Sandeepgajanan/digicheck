@@ -166,8 +166,8 @@ const Navbar = () => {
             </Link>
           ))}
           <Button
-            label="Contact"
-            link="/contact"
+            label={ctaLabel}
+            link={ctaLink}
             onClick={() => setMobileOpen(false)}
           />
         </div>
