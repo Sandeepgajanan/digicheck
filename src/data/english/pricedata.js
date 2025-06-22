@@ -55,6 +55,8 @@ export const priceData = [
 export const priceToggleData = {
   monthly: "monthly",
   yearly: "yearly",
+  month: "month",
+  year: "year",
 };
 export const priceData2 = {
   popularBadge: "Popular",

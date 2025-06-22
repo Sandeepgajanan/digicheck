@@ -16,10 +16,12 @@ const PriceCard = ({
   index,
   billingCycle,
 }) => {
-  const displayPrice = billingCycle === "monthly" ? price : yearlyPrice;
-  const displayPeriod = billingCycle === "monthly" ? "month" : "year";
   const { language } = useLanguage();
   const priceData2 = getData(language, "priceData2");
+  const priceToggleData = getData(language, "priceToggleData");
+
+  const displayPrice = billingCycle === "monthly" ? price : yearlyPrice;
+  const displayPeriod = billingCycle === "monthly" ? priceToggleData.month: priceToggleData.year;
 
   return (
     <article
