@@ -5,6 +5,7 @@ import Cursor from "@/utils/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import LanguagePopup from "@/components/LanguagePopup";
 
 export const metadata = {
   title: "DigiCheck",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased relative" cz-shortcut-listen="true">
         <LanguageProvider>
+          <LanguagePopup />
           <SmoothScroll />
           <Cursor />
           <Navbar />
