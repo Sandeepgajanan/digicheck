@@ -65,6 +65,7 @@ const LanguagePopup = () => {
   const handleLanguageChange = (selectedLanguage) => {
     setLanguage(selectedLanguage);
     localStorage.setItem("languageChoiceMade", "true");
+    localStorage.setItem("selectedLanguage", selectedLanguage);
     setShowPopup(false);
   };
 

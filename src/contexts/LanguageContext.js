@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext();
 
@@ -12,7 +12,21 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
+  // Always start with "english" to avoid hydration mismatch
   const [language, setLanguage] = useState("english");
+
+  // On mount, update language from localStorage if available
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    if (storedLanguage && storedLanguage !== language) {
+      setLanguage(storedLanguage);
+    }
+  }, []);
+
+  // Save language to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("selectedLanguage", language);
+  }, [language]);
 
   const value = {
     language,
